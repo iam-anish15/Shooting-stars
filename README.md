@@ -78,54 +78,30 @@ To build a fully **interactive, responsive, and educational web app** that allow
 ## 📁 Folder Structure
 shootingstars/
 ├── index.html # Homepage
+
 ├── style.css
+
 ├── script.js
+
 ├── impactlab.html # ImpactLab simulations
+
 ├── impactlab.css
+
 ├── impactlab.js
+
 ├── cosmoquest.html # Quiz & exploration
+
 ├── cosmoquest.css
+
 ├── cosmoquest.js
+
 ├── images/
+
 └── README.md # This file
+
 ✅ Each page has modular CSS and JS for **scalability & easier maintenance**.  
 
 ---
-
-## ⚙️ Setup Instructions
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/<your-username>/shootingstars.git
-cd shootingstars
-2. Open Locally
-
-Option 1: Open index.html in browser
-
-Option 2: Use Live Server for live preview:
-npm install -g live-server
-live-server
-
-3. Deploy on Vercel
-
-Push repo to GitHub
-
-Go to Vercel → New Project → Import Git Repository
-
-Framework: Other (HTML/CSS/JS)
-
-Root Directory: /
-
-Click Deploy → Your site will be live at
-🔗 https://shootingstars.vercel.app
-👥 Contributors
-Name	Role
-@aadya2901
-	Homepage, Landing Page, Deployment
-@iam-anish15
-	Homepage, Navbar, Footer, Carousel
-@ananyamishra13
-	ImpactLab, CosmoQuest, MiniBlast
 
 💬 Final Note
 
