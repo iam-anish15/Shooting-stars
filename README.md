@@ -17,7 +17,7 @@ To build a fully **interactive, responsive, and educational web app** that allow
 ---
 
 ## 🚀 Live Demo
-🔗 [Visit the Website](https://shootingstars.vercel.app)  
+🔗 [Visit the Website](https://shooting-stars-opal.vercel.app/)  
 
 ---
 
