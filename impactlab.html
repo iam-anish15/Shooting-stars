@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ImpactLab</title>
+<link rel="stylesheet" href="impactlab.css">
+<!-- Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+</head>
+<body>
+<!-- Navbar -->
+  <nav class="navbar">
+    <!-- <div class="nav-links"> -->
+      <div class="nav-links"><a href="index.html">Home</a></div>
+      <div class="nav-links"><a href="impactlab.html">ImpactLab</a></div>
+      <div class="nav-links"><a href="cosmoquest.html">CosmoQuest</a></div>
+      <div class="nav-links"><a href="impactlab.html">QuickStrike</a></div>
+      <div class="nav-links"><a href="cosmoquest.html">DeepDive</a></div>
+    <!-- </div> -->
+  </nav>
+  
+<div class="aurora"></div>
+<canvas id="meteorCanvas" aria-hidden="true"></canvas>
+
+<div class="app" id="app">
+  <!-- LEFT -->
+  <aside class="left">
+    <div class="logo">
+      <div class="badge">MM</div>
+      <div>
+        <h1>Aurora Command</h1>
+        <div class="muted">Impact simulator — Frontend demo</div>
+      </div>
+    </div>
+
+    <div class="dial">
+      <label>Diameter <span id="diam-val" class="muted">100 m</span></label>
+      <input id="diameter" type="range" min="10" max="2000" value="100" oninput="onRange('diameter')">
+    </div>
+
+    <div class="dial">
+      <label>Velocity <span id="vel-val" class="muted">20 km/s</span></label>
+      <input id="velocity" type="range" min="5" max="70" value="20" oninput="onRange('velocity')">
+    </div>
+
+    <div class="dial">
+      <label>Angle <span id="ang-val" class="muted">45°</span></label>
+      <input id="angle" type="range" min="10" max="90" value="45" oninput="onRange('angle')">
+    </div>
+
+    <div style="margin-top:6px">
+      <label class="muted">Impact Lat / Lon</label>
+      <div style="display:flex;gap:8px;margin-top:6px">
+        <input id="lat" type="number" value="20.5937" step="0.0001" style="flex:1;padding:8px;border-radius:8px;border:none;background:#071026;color:#eaf2ff">
+        <input id="lon" type="number" value="78.9629" step="0.0001" style="flex:1;padding:8px;border-radius:8px;border:none;background:#071026;color:#eaf2ff">
+      </div>
+    </div>
+
+    <div class="preset-row">
+      <div class="preset" onclick="applyPreset('small')">Small</div>
+      <div class="preset" onclick="applyPreset('medium')">Medium</div>
+      <div class="preset" onclick="applyPreset('large')">Large</div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn primary" onclick="simulate()">Simulate</button>
+      <button class="btn ghost" onclick="resetAll()">Reset</button>
+    </div>
+
+    <div style="margin-top:10px" class="muted">Pro tip: click the map to place the impact point.</div>
+  </aside>
+
+  <!-- CENTER MAP -->
+  <main class="center">
+    <div id="map"></div>
+    <canvas id="overlayCanvas"></canvas>
+  </main>
+
+  <!-- RIGHT STATS -->
+  <aside class="right">
+    <div class="stat">
+      <h3>Energy</h3>
+      <div class="big" id="energy">—</div>
+      <div class="muted">Kinetic energy (approx)</div>
+    </div>
+
+    <div class="stat">
+      <h3>Estimated crater</h3>
+      <div class="big" id="crater">—</div>
+      <div class="muted">Crater diameter (km)</div>
+    </div>
+
+    <div class="stat">
+      <h3>Damage radius</h3>
+      <div class="big" id="radius">—</div>
+      <div class="muted">Blast radius (km)</div>
+    </div>
+
+    <div class="stat">
+      <h3>Action</h3>
+      <div class="big" id="action">—</div>
+      <div class="muted">Suggested response level</div>
+    </div>
+
+    <div style="margin-top:12px;display:flex;gap:8px">
+      <button class="btn ghost" onclick="exportPDF()">Export PDF</button>
+      <button class="btn ghost" onclick="copyPermalink()">Share</button>
+    </div>
+  </aside>
+</div>
+
+<!-- modal -->
+<div class="modal-back" id="modal" role="dialog" aria-hidden="true">
+  <div class="modal">
+    <h3>Simulation Summary</h3>
+    <div id="modalBody" style="margin-top:10px;color:#cfefff"></div>
+    <div style="display:flex;justify-content:flex-end;margin-top:12px;gap:8px">
+      <button class="btn primary" onclick="playShockwave()">Play Animation</button>
+      <button class="btn ghost" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+</div>
+
+<footer>Prototype • MeteorMadness</footer>
+
+<!-- libs -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="impactlab.js"></script>
+</body>
+</html>
+
+  

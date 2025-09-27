@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShootingStars</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Canvas -->
+  <canvas id="meteorCanvas"></canvas>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <!-- <div class="nav-links"> -->
+      <div class="nav-links"><a href="index.html">Home</a></div>
+      <div class="nav-links"><a href="impactlab.html">ImpactLab</a></div>
+      <div class="nav-links"><a href="cosmoquest.html">CosmoQuest</a></div>
+      <div class="nav-links"><a href="impactlab.html">QuickStrike</a></div>
+      <div class="nav-links"><a href="cosmoquest.html">DeepDive</a></div>
+    <!-- </div> -->
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1 class="hero-title"></h1>
+    <p>
+      Dive into the world of asteroids and comets—simulate their impacts, track trajectories, and uncover meteor showers while exploring the cosmos!
+    </p>
+  </section>
+
+  <!-- carousel -->
+   <div class="carousel">
+  <section >
+  <ul class='slider'>
+    <li class='item' style="background-image: url('quickstrike.jpg')">
+      <div class='content'>
+        <h2 class='title'>QuickStrike</h2>
+        <p class='description'><b>Asteroid Presets 🪐</b> <br>
+        Small, Medium, Large ready-to-run scenarios for quick asteroid simulations.
+        </p>
+        <button onclick="location.href='impactlab.html'">Explore</button>
+
+      </div>
+    </li>
+    <li class='item' style="background-image: url('impactdesigner.jpg')">
+      <div class='content'>
+        <h2 class='title'>ImpactDesigner</h2>
+        <p class='description'><b>Custom Input Controls 🎛</b><br>
+Adjust Diameter, Velocity, Angle, and Latitude/Longitude with interactive sliders for precise impact modeling.
+</p>
+        <button onclick="location.href='cosmoquest.html'">Explore</button>
+
+      </div>
+    </li>
+    <li class='item' style="background-image: url('miniblast.jpg')">
+      <div class='content'>
+        <h2 class='title'>MiniBlast</h2>
+        <p class='description'><b>Impact Preview Card 🎬</b><br>
+Get a small canvas preview of the asteroid strike along with energy scale visualization.
+</p>
+       <button onclick="location.href='cosmoquest.html'">Explore</button>
+
+      </div>
+    </li>
+    <li class='item' style="background-image: url('spacequest.jpg')">
+      <div class='content'>
+        <h2 class='title'>SpaceQuest</h2>
+        <p class='description'><b>Asteroid Quiz 🧩</b>
+         <br>
+Test your knowledge with dynamic questions featuring Next/Previous navigation.
+
+        </p>
+        <button onclick="location.href='cosmoquest.html'">Explore</button>
+
+      </div>
+    </li>
+    <li class='item' style="background-image: url('deepdive.jpg')">
+      <div class='content'>
+        <h2 class='title'>DeepDive</h2>
+        <p class='description'><b> Info Modal ℹ</b>
+       <br>
+View extra asteroid details in a popup for deeper insights.
+
+        </p>
+       <button onclick="location.href='cosmoquest.html'">Explore</button>
+
+      </div>
+    </li>
+    <li class='item' style="background-image: url('astrometrics.jpg')">
+      <div class='content'>
+        <h2 class='title'>AstroMetrics</h2>
+        <p class='description'><b>Results & Legends Panel 📊</b><br>
+Displays Energy, Crater Size, Mass, Velocity, and Blast/Thermal legends for complete analysis.
+</p>
+        <button onclick="location.href='cosmoquest.html'">Explore</button>
+
+      </div>
+    </li>
+  </ul>
+  <nav class='nav'>
+    <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
+    <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+  </nav>
+</section>
+</div>
+
+  <!-- Footer -->
+  <footer>
+   <p id="p1">© 2025 ShootingStars. All rights reserved.</p>
+   <p id="p2">Made with ❤ from Asteroids</p>
+   <p id="p3">Track Meteors, Witness Impacts, Unveil the Universe!</p>
+  </footer> 
+
+
+
+  <script src="script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

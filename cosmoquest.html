@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CosmoQuest</title>
+  <link rel="stylesheet" href="cosmoquest.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <!-- <div class="nav-links"> -->
+      <div class="nav-links"><a href="index.html">Home</a></div>
+      <div class="nav-links"><a href="impactlab.html">ImpactLab</a></div>
+      <div class="nav-links"><a href="cosmoquest.html">CosmoQuest</a></div>
+      <div class="nav-links"><a href="impactlab.html">QuickStrike</a></div>
+      <div class="nav-links"><a href="cosmoquest.html">DeepDive</a></div>
+    <!-- </div> -->
+  </nav>
+  
+
+  <!-- Main layout -->
+  <div class="main-container">
+
+    <!-- Left Sidebar -->
+    <aside class="sidebar">
+      <h2>Asteroid Controls</h2>
+      <label for="asteroidSelect">Preset Asteroid:</label>
+      <select id="asteroidSelect"></select>
+      <button id="infoBtn">ℹ️ Info</button>
+      
+      <div class="slider-container">
+        <label>Diameter (m): <span id="diameterVal">100</span></label>
+        <input type="range" id="diameter" min="50" max="500" value="100">
+      </div>
+      <div class="slider-container">
+        <label>Velocity (km/s): <span id="velocityVal">20</span></label>
+        <input type="range" id="velocity" min="5" max="30" value="20">
+      </div>
+      <div class="slider-container">
+        <label>Impact Angle (°): <span id="angleVal">45</span></label>
+        <input type="range" id="angle" min="15" max="90" value="45">
+      </div>
+
+      <div class="sidebar-buttons">
+        <button id="simulateBtn">Simulate</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+    </aside>
+
+    <!-- Right Content -->
+    <div class="right-content">
+
+      <!-- Impact Preview Card -->
+      <div class="card" id="impactCard">
+        <h2>Impact Preview</h2>
+        <div class="canvas-container">
+          <canvas id="impactCanvas" width="300" height="200"></canvas>
+          <div class="corner-badge">💥 Energy Scale</div>
+        </div>
+        <button id="playImpact">Play Animation</button>
+      </div>
+
+      <!-- Results Card (moved up) -->
+      <div class="card" id="resultsCard">
+        <h2>Impact Results</h2>
+        <div class="results">
+          <p>Energy: <span id="energyVal">--</span></p>
+          <p>Crater Size: <span id="craterVal">--</span></p>
+          <p>Mass: <span id="massVal">--</span></p>
+          <p>Velocity: <span id="velocityResVal">--</span></p>
+        </div>
+        <div class="legend">
+          <p><strong>Legend:</strong> Blast / Thermal</p>
+        </div>
+      </div>
+
+      <!-- Quiz Card (moved down) -->
+      <div class="card" id="quizCard">
+        <h2>Asteroid Quiz</h2>
+        <div class="quiz-container">
+          <!-- Questions injected dynamically via JS -->
+        </div>
+        <div class="quiz-nav">
+          <button id="prevQuestion">Previous</button>
+          <button id="nextQuestion">Next</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Info Popup -->
+  <div class="info-popup" id="infoPopup">
+    <div class="info-content">
+      <span id="closePopup">&times;</span>
+      <h3>Asteroid Info</h3>
+      <p id="asteroidDetails"></p>
+    </div>
+  </div>
+
+  <script src="cosmoquest.js"></script>
+</body>
+</html>

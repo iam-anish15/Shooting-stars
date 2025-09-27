@@ -1,0 +1,274 @@
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background: url(background.png);
+  color: #fff;
+  height: 100vh;
+  overflow-x: hidden;
+  /* background-image: url("background.png"); */
+  background-size: cover;          /* Cover the whole screen */
+  background-position: center;     /* Center the image */
+  background-repeat: no-repeat;    /* Don’t tile */
+  background-attachment: fixed;    /* Fix background on scroll */
+}
+
+/* Main layout */
+.main-container {
+  display: flex;
+  height: 100%;
+}
+
+/* ========== Navbar ========== */
+.navbar {
+  position: relative;
+  top: 1rem;
+  background: transparent;
+  margin-top: 10px;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+ height: 60px;
+ width: 100vw;
+}
+
+.nav-links a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 8px 16px; /* so background is visible */
+  border-radius: 20px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glassy + Glossy 3D Hover */
+.nav-links a:hover {
+  color: #fff;
+  background: transparent; /* semi-transparent glass look */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 
+     0 2px 10px rgba(255, 255, 255, 0.167), /* soft shadow under */
+    inset 0 2px 3px rgba(116, 106, 204, 0.753); /* inner glossy shine */
+  transform: translateY(-3px); /* subtle 3D lift */
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: rgba(30,30,40,0.95);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  margin-top: 1.4rem;
+  border-radius: 15px;
+}
+
+.sidebar h2 {
+  color: #3E98FF;
+  margin-bottom: 10px;
+}
+
+.slider-container label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+input[type=range] {
+  width: 100%;
+}
+
+.sidebar-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.sidebar button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #3E98FF;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sidebar button:hover {
+  background: #5AB3FF;
+}
+
+/* Right content */
+.right-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Glassy card */
+.card {
+  background: rgba(30,30,40,0.85);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Canvas container with corner badge */
+.canvas-container {
+  position: relative;
+  width: 100%;
+}
+
+#impactCanvas {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.2);
+  /* Ensure logical canvas size matches visuals and add vignette */
+.canvas-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+#impactCanvas {
+  width: 100%;
+  height: 200px; /* unchanged visual size */
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(6,12,30,0.35), rgba(2,6,12,0.5));
+  box-shadow: inset 0 30px 60px rgba(0,0,0,0.45), 0 8px 30px rgba(0,0,0,0.6);
+  display: block;
+}
+
+/* subtle vignette around the canvas */
+.canvas-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 10px;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0) 40%, rgba(0,0,0,0.35) 100%);
+}
+
+}
+
+.corner-badge {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(62,152,255,0.7);
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(62,152,255,0.6);
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 5px rgba(62,152,255,0.3); }
+  100% { box-shadow: 0 0 15px rgba(62,152,255,0.9); }
+}
+
+/* Quiz */
+.quiz-container {
+  overflow: hidden;
+  position: relative;
+  height: 150px;
+}
+
+.quiz-question {
+  min-width: 100%;
+  transition: transform 0.5s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.quiz-question h3 {
+  color: #3E98FF;
+  margin-bottom: 10px;
+}
+
+.quiz-question button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 6px;
+  background: #1E1E1E;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.quiz-question button:hover {
+  background: #3E98FF;
+}
+
+/* Navigation buttons */
+.quiz-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.quiz-nav button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #3E98FF;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.quiz-nav button:hover {
+  background: #5AB3FF;
+}
+
+/* Info popup */
+.info-popup {
+  display: none;
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height:100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.info-content {
+  background: rgba(30,30,40,0.95);
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  position: relative;
+}
+
+#closePopup {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #fff;
+}

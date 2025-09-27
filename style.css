@@ -1,0 +1,330 @@
+/* ========== Global Styles ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #f0f0f0;
+
+  background-image: url("background.png");
+  background-size: cover;          /* Cover the whole screen */
+  background-position: center;     /* Center the image */
+  background-repeat: no-repeat;    /* Don’t tile */
+  background-attachment: fixed;    /* Fix background on scroll */
+  overflow-x: hidden;
+}
+html, body {
+  overscroll-behavior: none;
+}
+
+
+/* ========== Navbar ========== */
+.navbar {
+  position: relative;
+  top: 0.5rem;
+  background: transparent;
+  margin-top: 10px;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+ height: 60px;
+ width: 100vw;
+}
+
+.nav-links a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 8px 16px; /* so background is visible */
+  border-radius: 20px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glassy + Glossy 3D Hover */
+.nav-links a:hover {
+  color: #fff;
+  background: transparent; /* semi-transparent glass look */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 
+     0 2px 10px rgba(255, 255, 255, 0.167), /* soft shadow under */
+    inset 0 2px 3px rgba(116, 106, 204, 0.753); /* inner glossy shine */
+  transform: translateY(-3px); /* subtle 3D lift */
+}
+
+/* ========== Hero Section ========== */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  gap: 6rem;
+  border: #ffffff;
+  height: 100vh;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-top: 10rem;
+  color: #b362d1;
+  
+  /* shadow effect */
+  text-shadow: 
+    2px 2px 6px rgba(0, 0, 0, 0.6),   /* dark soft shadow */
+    0 0 10px rgba(179, 52, 225, 0.909); /* colored glow */
+}
+
+.hero p {
+  font-size: 1.4rem;
+  max-width: 30rem;
+  color: #ccc;
+}
+
+.hero .cta-btn {
+  padding: 10px 25px;
+  background-color: #8f41b1;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.hero .cta-btn:hover {
+  background-color: #7606df;
+}
+
+/* Hero Title & Cursor */
+.hero-title {
+  display: inline-block;
+  min-height: 2.5rem;
+  white-space: nowrap;
+  font-size: 2.5rem;
+  color: #a18da8;
+}
+
+.cursor {
+  display: inline-block;
+  width: 1ch;
+  color: #a18da8;
+  font-weight: bold;
+  margin-left: 2px;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+/* ========== Footer ========== */
+footer {
+  background-color: transparent;
+  text-align: center;
+  padding: 20px;
+  font-size: 1rem;
+  color: #ffffff;
+ 
+}
+
+#p1{
+  color: #fff;
+}
+#p2{
+  color: #f13e3ee7;
+}
+
+#p3{
+  color: #167fff;
+}
+
+#meteorCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;  /* Make sure it’s above body bg but behind content */
+}
+.hero,
+.features,
+.carousel,
+footer {
+  position: relative;
+  z-index: 1; /* Ensures content sits above canvas */
+}
+
+
+/* ===== Carousel Wrapper ===== */
+.carousel {
+  position: relative;
+  width: 90vw;
+  height: 80vh;
+  margin: 60px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid  #ffffff;
+  border-radius: 50px;
+  /* box-shadow: 3px 3px 25px rgb(125, 149, 237); */
+  box-shadow:3px 3px 25px rgb(115, 102, 135);
+}
+
+/* ===== Carousel Items ===== */
+.item {
+  width: 250px;
+  height: 350px;
+  list-style-type: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 30px rgba(0,0,0,0.6);
+  transition: transform 0.3s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
+}
+
+/* First two slides (active background) */
+.item:nth-child(1), .item:nth-child(2) {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: none;
+  border-radius: 0;
+  box-shadow: none;
+  opacity: 1;
+}
+/* Default: hidden */
+.item .content {
+  opacity: 0;
+  pointer-events: none;   /* disable clicks on hidden content */
+  transition: opacity 0.6s ease;
+}
+
+/* Active slide (2nd child after rotation) */
+.item:nth-of-type(2) .content {
+  opacity: 1;
+  pointer-events: auto;   /* enable clicks */
+}
+
+/* Positioning visible slides */
+.item:nth-child(3) { left: 40%; }
+.item:nth-child(4) { left: calc(40% + 260px); }
+.item:nth-child(5) { left: calc(40% + 520px); }
+.item:nth-child(6) { left: calc(40% + 780px); opacity: 0; }
+
+/* ===== Content Box (Always Visible on Active Slide) ===== */
+.content {
+  width: min(32vw,420px);
+  position: absolute;
+  top: 50%;
+  left: 3rem;
+  transform: translateY(-50%);
+  font: 400 1rem helvetica, sans-serif;
+  color: white;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.8);
+  /* opacity: 0;
+  display: none; */
+  padding: 20px;
+
+  border-radius: 12px;
+}
+
+.content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #ffccff;
+}
+
+.content p {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  color: #f0f0f0;
+  line-height: 1.4;
+}
+
+
+/* ===== Navigation Arrows ===== */
+.nav {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  user-select: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav .btn {
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  border: 2px solid #8a61e8;
+  margin: 0 0.5rem;
+  padding: 1rem;
+  font-size: 1.8rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.nav .btn:hover {
+  background: #7752ccbb;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #7663f0;
+}
+
+/* Default: hidden on all slides */
+.item .content {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+
+  position: absolute;
+  top: 50%;                 /* vertically centered */
+  left: 40px;               /* push it from left edge */
+  transform: translateY(-50%);  /* perfect vertical centering */
+  width: 320px;             /* fixed width for text block */
+  max-width: 40%;           /* prevent overflow */
+  border-radius: 12px;
+  padding: 20px;
+  text-align: left;         /* align text left */
+  color: #fff;
+  backdrop-filter: blur(2px);
+  border: 0.5px solid #fff;
+  box-shadow: 2px 2px 10px rgb(164, 100, 228) ;
+}
+
+/* Show only on active slide (second item in DOM after rotation) */
+.item:nth-of-type(2) .content {
+  opacity: 1;
+  pointer-events: auto;
+}
+button{
+  height: 30px;
+  width: 100px;
+  border: 1px solid rgb(164, 100, 228);
+  border-radius: 50px;
+  background: transparent;
+  color:#fff;
+}
+
+button :hover{
+  background-color: rgb(178, 118, 237);
+  color: #fff;
+}
