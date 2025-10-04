@@ -61,25 +61,25 @@ To create a **fully interactive, responsive, and educational front-end web app**
 ## 📸 Screenshots
 
 ### Landing Page
-![Landing Page](landing_page_ss.jpg)
+![Landing Page](landing_page_ss.png)
 
 ### Features Carousel
-![Features Carousel](homepage_ss.jpg)
+![Features Carousel](homepage_ss.png)
 
 ### QuickStrike
-![QuickStrike](quickstrike_ss.jpg)
+![QuickStrike](quickstrike_ss.png)
 
 ### ImpactInferno
-![ImpactInferno](impactinferno_ss.jpg)
+![ImpactInferno](impactinferno_ss.png)
 
 ### OrbitOdyssey
-![OrbitOdyssey](orbitodyssey_ss.jpg)
+![OrbitOdyssey](orbitodyssey_ss.png)
 
 ### StardustLab
-![StardustLab](stardustlab_ss.jpg)
+![StardustLab](stardustlab_ss.png)
 
 ### SpaceQuest
-![SpaceQuest](spacequest_ss.jpg)
+![SpaceQuest](spacequest_ss.png)
 
 
 ---
@@ -200,4 +200,3 @@ This project is open source under the **MIT License**. Use it for personal or ed
 ## 💬 Final Note
 
 *"Exploring the cosmos one asteroid at a time!"* 🚀
-
