@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StardustLab</title>
+  <link rel="stylesheet" href="stardustlab.css">
+</head>
+<body>
+<div class="outer">
+
+    <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-links"><a href="index.html">Home</a></div>
+    <div class="nav-links"><a href="impactinferno.html">ImpactInferno</a></div>
+    <div class="nav-links"><a href="https://3d-solar-system-three-js.vercel.app/">OrbitOdyssey</a></div>
+    <div class="nav-links"><a href="quickstrike.html">QuickStrike</a></div>
+    <div class="nav-links"><a href="spacequest.html">SpaceQuest</a></div>
+    <div class="nav-links"><a href="stardustlab.html">StardustLab</a></div>
+  </nav>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+        <h2>Meteors</h2>
+        <div id="meteorList" class="meteor-list"></div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+        <div class="meteor-display">
+            <div class="meteor-container">
+            <img id="meteorImg" src="" alt="Meteor">
+            </div>
+            <div id="meteorInfo" class="meteor-info"></div>
+            <!-- Extended Info Card -->
+            <div id="extendedInfo" class="extended-info" style="display:none;"></div>
+        </div>
+        </main>
+    </div>
+</div>
+<script src="stardustlab.js"></script>
+</body>
+</html>

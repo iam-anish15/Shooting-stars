@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ImpactInferno</title>
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+<link rel="stylesheet" href="impactinferno.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-links"><a href="index.html">Home</a></div>
+    <div class="nav-links"><a href="stardustlab.html">StardustLab</a></div>
+    <div class="nav-links"><a href="impactinferno.html">ImpactInferno</a></div>
+    <div class="nav-links"><a href="https://3d-solar-system-three-js.vercel.app/">OrbitOdyssey</a></div>
+    <div class="nav-links"><a href="quickstrike.html">QuickStrike</a></div>
+    <div class="nav-links"><a href="spacequest.html">SpaceQuest</a></div>
+  </nav>
+
+  <canvas id="starfield-canvas"></canvas>
+  
+<header>
+  <h1>ImpactInferno — Meteor Impact Simulator</h1>
+  <p class="subtitle">Pick a real asteroid from NASA or customize parameters, then click the map to simulate.</p>
+</header>
+
+<main>
+  <aside id="controls">
+    <section class="control-block">
+      <label for="asteroidList">🌌 Real asteroids (today) — NASA NEO Feed</label>
+      <select id="asteroidList">
+        <option value="">Loading today's asteroids...</option>
+      </select>
+    </section>
+
+    <section class="control-block">
+      <label>Asteroid Size (m): <strong id="sizeValue">200</strong></label>
+      <input id="sizeSlider" type="range" min="50" max="2000" step="10" value="200">
+
+      <label>Velocity (km/s): <strong id="speedValue">20</strong></label>
+      <input id="speedSlider" type="range" min="5" max="70" step="0.5" value="20">
+
+      <label>Impact Angle (°): <strong id="angleValue">45</strong></label>
+      <input id="angleSlider" type="range" min="10" max="90" step="1" value="45">
+    </section>
+
+    <section class="control-block small">
+      <p>💡 Tip: Pick an asteroid or adjust sliders, then <strong>click the map</strong> to simulate.</p>
+      <button id="clearBtn">Clear Impact</button>
+    </section>
+
+    <section id="resultPanel" class="control-block">
+      <h3>Impact Summary</h3>
+      <div id="resultContent">
+        <p>Click map to run a simulation.</p>
+      </div>
+    </section>
+  </aside>
+
+  <section id="mapWrap">
+    <div id="map"></div>
+    <canvas id="previewCanvas"></canvas>
+  </section>
+</main>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script src="impactinferno.js"></script>
+</body>
+</html>

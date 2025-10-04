@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quickstrike Asteroid Simulation</title>
+<link rel="stylesheet" href="quickstrike.css">
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+<body>
+  <canvas id="starsCanvas"></canvas>
+ <div class="bg-container">
+  
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-links"><a href="index.html">Home</a></div>
+    <div class="nav-links"><a href="impactinferno.html">ImpactInferno</a></div>
+    <div class="nav-links"><a href="https://3d-solar-system-three-js.vercel.app/">OrbitOdyssey</a></div>
+    <div class="nav-links"><a href="quickstrike.html">QuickStrike</a></div>
+    <div class="nav-links"><a href="spacequest.html">SpaceQuest</a></div>
+    <div class="nav-links"><a href="stardustlab.html">StardustLab</a></div>
+  </nav>
+
+  <div class="content">
+    <h1>Quickstrike: Target the Earth!</h1>
+    <p>Click on the Earth to aim your asteroid</p>
+
+    <!-- Earth Target -->
+    <div id="earth-container">
+      <img id="earth" src="earth.png" alt="Earth">
+    </div>
+
+    <!-- Buttons -->
+    <div class="buttons">
+      <button id="quickstrikeBtn">Launch Asteroid</button>
+      <button id="snapshotBtn">Snapshot</button>
+      <button id="downloadBtn">Download Snapshot</button>
+    </div>
+
+    <!-- Report -->
+    <div id="report" class="report">
+      <p>Blast report will appear here...</p>
+    </div>
+  </div>
+
+  <!-- Blast Report Panel -->
+  <div id="blastReport" class="fixed bottom-4 right-4 bg-gray-900 text-white p-4 rounded-2xl shadow-xl w-80 hidden">
+    <h2 class="text-xl font-bold mb-2"> Blast Report</h2>
+    <p id="energyOutput" class="mb-1"></p>
+    <p id="craterOutput" class="mb-1"></p>
+    <p id="advisoryOutput" class="font-semibold"></p>
+  </div>
+</div>
+<script>
+const canvas = document.getElementById('starsCanvas');
+const ctx = canvas.getContext('2d');
+
+let w = canvas.width = window.innerWidth;
+let h = canvas.height = window.innerHeight;
+
+const stars = [];
+for (let i = 0; i < 200; i++) {
+  stars.push({
+    x: Math.random() * w,
+    y: Math.random() * h,
+    r: Math.random() * 1.5 + 0.5,
+    dx: (Math.random() - 0.5) * 0.2,
+    dy: (Math.random() - 0.5) * 0.2
+  });
+}
+
+function animateStars() {
+  ctx.clearRect(0, 0, w, h);
+  for (let s of stars) {
+    s.x += s.dx;
+    s.y += s.dy;
+
+    if (s.x < 0) s.x = w;
+    if (s.x > w) s.x = 0;
+    if (s.y < 0) s.y = h;
+    if (s.y > h) s.y = 0;
+
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fillStyle = "white";
+    ctx.fill();
+  }
+  requestAnimationFrame(animateStars);
+}
+animateStars();
+
+window.addEventListener("resize", () => {
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
+});
+</script>
+
+<script src="quickstrike.js"></script>
+
+</body>
+</html>

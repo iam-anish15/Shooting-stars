@@ -13,108 +13,90 @@
 
   <!-- Navbar -->
   <nav class="navbar">
-    <!-- <div class="nav-links"> -->
-      <div class="nav-links"><a href="index.html">Home</a></div>
-      <div class="nav-links"><a href="impactlab.html">ImpactLab</a></div>
-      <div class="nav-links"><a href="cosmoquest.html">CosmoQuest</a></div>
-      <div class="nav-links"><a href="impactlab.html">QuickStrike</a></div>
-      <div class="nav-links"><a href="cosmoquest.html">DeepDive</a></div>
-    <!-- </div> -->
+    <div class="nav-links"><a href="index.html">Home</a></div>
+    <div class="nav-links"><a href="impactinferno.html">ImpactInferno</a></div>
+    <div class="nav-links"><a href="https://3d-solar-system-three-js.vercel.app/">OrbitOdyssey</a></div>
+    <div class="nav-links"><a href="quickstrike.html">QuickStrike</a></div>
+    <div class="nav-links"><a href="spacequest.html">SpaceQuest</a></div>
+    <div class="nav-links"><a href="stardustlab.html">StardustLab</a></div>
   </nav>
 
   <!-- Hero Section -->
   <section class="hero">
     <h1 class="hero-title"></h1>
     <p>
-      Dive into the world of asteroids and comets—simulate their impacts, track trajectories, and uncover meteor showers while exploring the cosmos!
+      Dive into the world of asteroids and comets—simulate their impacts, track trajectories, and uncover meteor showers while exploring the cosmos!
     </p>
   </section>
 
-  <!-- carousel -->
-   <div class="carousel">
-  <section >
-  <ul class='slider'>
-    <li class='item' style="background-image: url('quickstrike.jpg')">
-      <div class='content'>
-        <h2 class='title'>QuickStrike</h2>
-        <p class='description'><b>Asteroid Presets 🪐</b> <br>
-        Small, Medium, Large ready-to-run scenarios for quick asteroid simulations.
-        </p>
-        <button onclick="location.href='impactlab.html'">Explore</button>
+  <!-- Carousel -->
+<div class="carousel">
+  <section>
+    <ul class="slider">
+      <!-- QuickStrike -->
+      <li class="item" style="background-image: url('quickstrike_bg.jpg')">
+        <div class="content">
+          <h2 class="title">QuickStrike</h2>
+          <p class="description"><b>Asteroid Presets</b><br>Small, Medium, Large ready-to-run scenarios for quick asteroid simulations.</p>
+          <button onclick="location.href='quickstrike.html'">Explore</button>
+        </div>
+      </li>
 
-      </div>
-    </li>
-    <li class='item' style="background-image: url('impactdesigner.jpg')">
-      <div class='content'>
-        <h2 class='title'>ImpactDesigner</h2>
-        <p class='description'><b>Custom Input Controls 🎛</b><br>
-Adjust Diameter, Velocity, Angle, and Latitude/Longitude with interactive sliders for precise impact modeling.
-</p>
-        <button onclick="location.href='cosmoquest.html'">Explore</button>
+      <!-- ImpactInferno -->
+      <li class="item" style="background-image: url('impactinferno.jpg')">
+        <div class="content">
+          <h2 class="title">ImpactInferno</h2>
+          <p class="description"><b>High-Energy Impacts</b><br>Simulate extreme asteroid strikes with advanced visualization of blast and thermal effects.</p>
+          <button onclick="location.href='impactinferno.html'">Explore</button>
+        </div>
+      </li>
 
-      </div>
-    </li>
-    <li class='item' style="background-image: url('miniblast.jpg')">
-      <div class='content'>
-        <h2 class='title'>MiniBlast</h2>
-        <p class='description'><b>Impact Preview Card 🎬</b><br>
-Get a small canvas preview of the asteroid strike along with energy scale visualization.
-</p>
-       <button onclick="location.href='cosmoquest.html'">Explore</button>
+      <!-- SpaceQuest -->
+      <li class="item" style="background-image: url('spacequest.jpg')">
+        <div class="content">
+          <h2 class="title">SpaceQuest</h2>
+          <p class="description"><b>Asteroid Quiz</b><br>Test your knowledge with dynamic questions featuring Next/Previous navigation.</p>
+          <button onclick="location.href='spacequest.html'">Explore</button>
+        </div>
+      </li>
 
-      </div>
-    </li>
-    <li class='item' style="background-image: url('spacequest.jpg')">
-      <div class='content'>
-        <h2 class='title'>SpaceQuest</h2>
-        <p class='description'><b>Asteroid Quiz 🧩</b>
-         <br>
-Test your knowledge with dynamic questions featuring Next/Previous navigation.
+      <!-- OrbitOdyssey -->
+      <li class="item" style="background-image: url('orbitodyssey.jpg')">
+        <div class="content">
+          <h2 class="title">OrbitOdyssey</h2>
+          <p class="description"><b>Solar System Explorer</b><br>Visualize planets, moons, asteroids, and orbital paths in a 3D interactive solar system.</p>
+          <button onclick="window.open('https://3d-solar-system-three-js.vercel.app/', '_blank')">Explore</button>
+        </div>
+      </li>
+    </ul>
 
-        </p>
-        <button onclick="location.href='cosmoquest.html'">Explore</button>
+    <!-- StardustLab
+<li class="item" style="background-image: url('457.jpg')">
+  <div class="content">
+    <h2 class="title">Stardust Lab</h2>
+    <p class="description">
+      <b>Meteor Science & Education</b><br>
+      Explore the fascinating world of meteors—learn about types, composition, velocities, and impact phenomena in an interactive, educational hub.
+    </p>
+    <button onclick="location.href='stardustlab.html'">Explore</button>
+  </div>
+</li> -->
 
-      </div>
-    </li>
-    <li class='item' style="background-image: url('deepdive.jpg')">
-      <div class='content'>
-        <h2 class='title'>DeepDive</h2>
-        <p class='description'><b> Info Modal ℹ</b>
-       <br>
-View extra asteroid details in a popup for deeper insights.
-
-        </p>
-       <button onclick="location.href='cosmoquest.html'">Explore</button>
-
-      </div>
-    </li>
-    <li class='item' style="background-image: url('astrometrics.jpg')">
-      <div class='content'>
-        <h2 class='title'>AstroMetrics</h2>
-        <p class='description'><b>Results & Legends Panel 📊</b><br>
-Displays Energy, Crater Size, Mass, Velocity, and Blast/Thermal legends for complete analysis.
-</p>
-        <button onclick="location.href='cosmoquest.html'">Explore</button>
-
-      </div>
-    </li>
-  </ul>
-  <nav class='nav'>
-    <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
-    <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
-  </nav>
-</section>
+    <nav class="nav">
+      <ion-icon class="btn prev" name="arrow-back-outline"></ion-icon>
+      <ion-icon class="btn next" name="arrow-forward-outline"></ion-icon>
+    </nav>
+  </section>
 </div>
 
   <!-- Footer -->
   <footer>
-   <p id="p1">© 2025 ShootingStars. All rights reserved.</p>
-   <p id="p2">Made with ❤ from Asteroids</p>
-   <p id="p3">Track Meteors, Witness Impacts, Unveil the Universe!</p>
-  </footer> 
+    <p id="p1">© 2025 ShootingStars. All rights reserved.</p>
+    <p id="p2">Made with ❤ from Asteroids</p>
+    <p id="p3">Track Meteors, Witness Impacts, Unveil the Universe!</p>
+  </footer>
 
-
-
+  <!-- Scripts -->
   <script src="script.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

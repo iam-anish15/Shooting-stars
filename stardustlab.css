@@ -1,0 +1,241 @@
+/* Body */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: url('bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  color: #f0f0f0;
+  display: flex;
+  height: 100vh;
+}
+
+
+/* ========== Navbar ========== */
+.navbar {
+  position: relative;
+  top: 0.5rem;
+  background: transparent;
+  margin-top: 10px;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+ height: 60px;
+ width: 100vw;
+}
+
+.nav-links a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 8px 16px; /* so background is visible */
+  border-radius: 20px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glassy + Glossy 3D Hover */
+.nav-links a:hover {
+  color: #fff;
+  background: transparent; /* semi-transparent glass look */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 
+     0 2px 10px rgba(255, 255, 255, 0.167), /* soft shadow under */
+    inset 0 2px 3px rgba(116, 106, 204, 0.753); /* inner glossy shine */
+  transform: translateY(-3px); /* subtle 3D lift */
+}
+
+/* Container */
+.container {
+  display: flex;
+  width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: transparent;
+  padding: 20px;
+  overflow-y: auto;
+  /* border-right: 2px solid #30363d; */
+  border-radius: 15px 0 0 15px;
+  margin-left:10px;
+  margin-top: 20px;
+}
+
+.sidebar h2 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #ffdd59;
+}
+
+.meteor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.meteor-card {
+  display: flex;
+  align-items: center;
+  background: rgba(13,17,23,0.85);
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 8px;
+  cursor: pointer;
+  transition: 0.4s;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.meteor-card:hover {
+  background: rgba(33,38,45,0.9);
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+}
+
+.meteor-card img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-right: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+.meteor-card .meteor-name {
+  flex: 1;
+  font-weight: 500;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px;
+  flex-direction: column;
+}
+
+/* Meteor display */
+.meteor-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+  margin-top: 15px;
+}
+
+.meteor-container {
+  perspective: 1000px;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(255,255,255,0.15);
+}
+
+#meteorImg {
+  width: 180px;
+  transform-style: preserve-3d;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+/* Meteor info */
+.meteor-info {
+  margin-top: 20px;
+  background: rgba(22,27,34,0.9);
+  padding: 20px;
+  border-radius: 15px;
+  width: 85%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.detail-card {
+  background: rgba(13,17,23,0.85);
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid #30363d;
+  transition: 0.3s;
+}
+
+.detail-card:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 15px rgba(255,255,255,0.2);
+}
+
+.detail-card .label {
+  font-weight: bold;
+  font-size: 14px;
+  color: #fff9df;
+}
+
+.detail-card .value {
+  font-size: 14px;
+  margin-top: 5px;
+  color: #fff;
+}
+
+.risk-low { border: 2px solid #2ecc71; background-color: #2ecc71; }
+.risk-moderate { border: 2px solid #f1c40f; background-color: #e0b404ee }
+.risk-high { border: 2px solid #e67e22; background-color: #e67e22}
+.risk-extreme { border: 2px solid #e74c3c; background-color:#e74c3c }
+
+/* Extended Info Card */
+.extended-info {
+  background: #1e2530;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 15px;
+  border: 1px solid #3a3f4b;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: all 0.4s ease;
+  max-width: 80%;
+}
+
+.extended-info h3 {
+  margin-top: 0;
+  color: #f1c40f;
+  font-size: 1.4rem;
+  border-bottom: 1px solid #f1c40f;
+  padding-bottom: 5px;
+}
+
+.extended-info p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #dcdcdc;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container { flex-direction: column; }
+  .sidebar { width: 100%; display: flex; overflow-x: auto; border-radius: 0; }
+  .meteor-card { flex-direction: column; align-items: center; }
+  .main-content { align-items: center; padding: 15px; }
+  .meteor-container { width: 220px; height: 220px; }
+  #meteorImg { width: 140px; }
+}
